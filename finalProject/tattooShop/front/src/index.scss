@@ -1,0 +1,87 @@
+
+@import './assets/styles/mixins';
+@import './assets/styles/variables';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    margin: 0; 
+}
+body {
+    background-color: $bg;
+    font-family: $default-font;
+    font-size: 17px;
+    color: $white;
+    line-height: 150%;
+}
+
+
+h1 {
+    font-size: 35px;
+    line-height: 100%;
+    margin-bottom: 20px;
+    color: $orange;
+    font-family: $second-font;
+    font-weight: 300;
+
+    @include media ('>=768px') {
+        font-size: 60px;
+        margin-bottom: 30px;
+    }
+
+    @include media ('>=1024px') {
+        font-size: 75px;
+    }
+}
+
+h2 {
+    font-size: 25px;
+    line-height: 130%;
+    margin: 0;
+    color: $dark;
+    font-family: $second-font;
+    font-weight: 300;
+    
+    @include media ('>=768px') {
+        font-size: 50px;
+    }
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 130%;
+    color: $dark;
+    margin: 0;
+}
+
+p {
+    font-size: 15px;
+    line-height: 140%;
+    margin-bottom: 30px;
+    color: $dark;
+}
+
+a {
+    text-decoration: none;
+    text-transform: capitalize;
+    line-height: 20px;
+    color: $white;
+    transition: all ease-in-out 0.3s;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+   max-width: 100%;
+}
+
+

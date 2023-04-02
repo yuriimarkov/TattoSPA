@@ -1,0 +1,68 @@
+@import './../../assets/styles/variables';
+@import './../../assets/styles/mixins';
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 213px;
+    height: 60px;
+    background-color: $dark-orange;
+    border: 2px solid $orange;
+    color: $white;
+    font-size: 20px;
+    line-height: 150%;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+
+
+    @include media ('>=768px') {
+        width: 213px;
+    }
+
+    &.hero__btn {
+        transition: all ease-in-out 0.5s;
+
+        &:hover,
+        &:active {
+            color: $orange;
+            background-color: $bg;
+        }
+    }
+
+
+    &.btn__add {
+        width: 240px;
+        height: 50px;
+        color: $orange;
+        background-color: $bg;
+        font-size: 20px;
+        line-height: 150%;
+        margin-bottom: 16px;
+        
+        @include media ('>=768px') {
+            width: 208px;
+        }
+
+        &:hover,
+        &:active {
+            background-color: $dark-orange;
+            color: $white;
+        }
+    }
+
+    &.catalog__btn {
+        background-color: transparent;
+        color: $orange;
+        &:hover,
+        &:active {
+            background-color: $dark-orange;
+            color: $white;
+        }
+    }
+
+    &.banner__btn {
+        background-color: transparent;
+        border: none;
+    }
+}

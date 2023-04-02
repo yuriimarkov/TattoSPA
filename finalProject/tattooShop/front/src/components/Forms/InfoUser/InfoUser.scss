@@ -1,0 +1,44 @@
+@import './../../../assets/styles/variables';
+@import './../../../assets/styles/mixins';
+
+.form__info--user {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    padding-bottom: 60px;
+
+    @include media ('>=768px') {
+        padding-bottom: 80px;
+    }
+
+    .form__title {
+        font-size: 17px;
+        line-height: 115%;
+
+        @include media ('>=768px') {
+            font-size: 25px;
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        @include media ('>=768px') {
+            flex-direction: row;
+        }
+    }
+
+    .form__input-holder {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+
+        @include media ('>=768px') {
+            width: calc(100% / 3 );
+        }
+    }
+
+}

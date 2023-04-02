@@ -1,0 +1,59 @@
+@import './../../assets/styles/variables';
+@import './../../assets/styles/mixins';
+
+.social {
+    padding: 40px 0;
+    border-top: 1px solid $dark-orange;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+
+    @include media ('>=1024px') {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      padding: 0;
+    }
+
+  .telephone {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social__list {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social__item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      transition: all ease-in-out 0.4s;
+      border: 1px solid $orange;
+      color: $orange;
+      padding: 8px;
+  
+      &:hover {
+        color: $white;
+        border: 1px solid $white;
+      }
+    }
+  }
+  .time {
+    color: $semi-gray;
+
+    @include media ('>=1024px') {
+      display: none;
+    }
+  }
+
+
+  
+}

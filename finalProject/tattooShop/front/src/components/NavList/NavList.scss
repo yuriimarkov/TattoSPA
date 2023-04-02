@@ -1,0 +1,24 @@
+@import './../../assets/styles/variables';
+@import './../../assets/styles/mixins';
+
+.nav__list  {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 0;
+    font-size: 20px;
+
+    @include media ('>=1024px') {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .nav__link {
+        transition: all ease-in-out 0.5s;
+        border: none;
+
+        &:hover,&:after {
+            color: $orange;
+        }
+    }
+}

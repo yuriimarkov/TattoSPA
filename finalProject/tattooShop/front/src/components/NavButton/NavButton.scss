@@ -1,0 +1,49 @@
+@import './../../assets/styles/variables';
+
+.nav__btn-holder {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    .text {
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 140%;
+    }
+    
+    .burger {
+        position: relative;
+        width: 28px;
+        height: 14px;
+        background-color: transparent;
+        padding: 10px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+      
+        span,
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 100%;
+          border-bottom: 2px solid $orange;
+          transition: all ease-in-out 0.3s;
+        }
+      
+        span {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      
+        &:before {
+          top: 0;
+        }
+      
+        &:after {
+          bottom: 0;
+        }
+      }
+}
+

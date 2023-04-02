@@ -1,0 +1,16 @@
+.favorite__icon-holder {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in-out 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  .icon {
+    font-size: 20px;
+  }
+}

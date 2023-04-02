@@ -1,0 +1,96 @@
+@import './../../assets/styles/variables';
+@import './../../assets/styles/mixins';
+
+.hero {
+    border-top: 2px solid $orange;
+    border-bottom: 2px solid $orange;
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7) ), url(./../../assets/images/Hero_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+    .hero__container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 11px 10px ;
+        max-width: 1200px;
+        margin: 0 auto;
+        
+    
+        @include media ('>=768px') {
+            align-items: flex-start;
+        }
+    }
+    
+    .hero__heading{
+        width: 100%;
+        margin-bottom: 10px;
+
+        @include media ('>=768px') {
+            width: 70%;
+            margin-bottom:  10px;
+        }
+
+        @include media ('>=1024px') {
+            width: 60%;
+        }
+    }
+
+    p {
+        font-size: 20px;
+        color: $white;
+        
+        @include media ('>768px')  {
+            font-size: 25px;
+        }
+        @include media ('>768px')  {
+            font-size: 25px;
+            width: 60%;
+        }
+    }
+
+    .hero__btn-holder {
+        width: 100%;
+        display: flex;
+    }
+
+    .swiper-wrapper {
+        padding-bottom: 40px;
+        margin-bottom: 30px;
+
+        @include media ('>=1024px') {
+            flex-direction: row;
+        }
+    }
+
+    .swiper-pagination {
+        padding-bottom: 30px;
+    }
+    .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+        border: 1px solid $dark-orange;
+        background-color: transparent;
+        border-radius: 0;
+        opacity: 1;
+        
+    }
+
+    .swiper-pagination-bullet-active {
+        position: relative;
+       &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        top: 50%;
+        left: 50%;
+        background-color: $orange;
+        width: 10px;
+        height: 10px;
+        transform: translate(-50%,-50%);
+       }
+    }
+}

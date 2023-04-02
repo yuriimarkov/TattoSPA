@@ -1,0 +1,70 @@
+@import './../../assets/styles/variables';
+@import './../../assets/styles/mixins';
+
+
+.brands {
+    padding-bottom: 60px;
+
+    .brands__container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 1200px;
+    }
+    
+    .brands__heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+        
+        .btn {
+            font-size: 15px;
+            line-height: 140%;
+            color: $dark;
+
+            @include media ('>=768px') {
+                font-size: 25px;
+            }
+        }
+    }
+    
+    .brand__card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 7px;
+
+        @include media ('>=768px') {
+            gap: 20px;
+        }
+    }
+
+    
+    
+    .item__img-holder {
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all ease-in-out 0.5s; 
+
+        &:hover {
+            transform: scale(1.04);
+            border: 1px solid $gray;
+        }
+        img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+        }
+    }
+
+    .btn {
+        transition: all ease-in-out 0.4s;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
