@@ -20,7 +20,7 @@ import loadingGif from './../../assets/images/loading.gif';
 function App() {
   const { loading, error, data } = useQuery(GET_DATA);
   const [basket, setBasket] = useState([]);
-  console.log(data)
+
   function addToBasket(product) {
     const existingItem = basket.find((item) => item.id === product.id);
   
@@ -64,10 +64,10 @@ function App() {
   
   return (
     <>
-      <Header />
+      <Header/>
       <main>
         <Routes>
-          <Route path='/' element={<Home data={data} addToBasket={addToBasket} />} />
+          <Route path='/' element={<Home data={data}  addToBasket={addToBasket} />} />
           <Route path='/promo' element={<Promo />} />
           <Route path='/about' element={<Blog />} />
           <Route path='/contact' element={<Contact />} />

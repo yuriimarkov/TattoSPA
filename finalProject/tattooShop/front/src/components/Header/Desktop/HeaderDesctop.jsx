@@ -9,7 +9,7 @@ import AuthButton from "../../Pages/Auth/AuthButton/AuthButton";
 import logo from "./../../../assets/images/logo.svg";
 import { Link } from "react-router-dom";
 
-export default function HeaderDesctop({ updateMenu, navClass }) {
+export default function HeaderDesctop({ updateMenu, navClass, total,count }) {
   return (
     <div className="header__container">
       <div className="header__top">
@@ -20,7 +20,7 @@ export default function HeaderDesctop({ updateMenu, navClass }) {
           </div>
         </Link>
         <div className="header__icons">
-          <Basket />
+          <Basket total={total}  count={count} />
           <FavoriteButton />
           <AuthButton />
         </div>

@@ -6,7 +6,7 @@ import Search from "../../search/Search";
 import AuthButton from "../../Pages/Auth/AuthButton/AuthButton";
 import FavoriteButton from "../../Pages/Favorite/FavoriteIcon/FavoriteButton";
 
-export default function HeaderTablet({ updateMenu, navClass }) {
+export default function HeaderTablet({ updateMenu, navClass,total,count }) {
   return (
     <div className="header__container">
       <div className="header__nav-holder">
@@ -18,7 +18,7 @@ export default function HeaderTablet({ updateMenu, navClass }) {
       </div>
       <Search />
       <div className="header__icons">
-        <Basket />
+        <Basket total={total}  count={count} />
         <FavoriteButton />
         <AuthButton />
       </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import "./../../assets/styles/icomoon/icomoon.css";
@@ -10,7 +10,17 @@ import HeaderTablet from "./Tablet/HeaderTablet";
 export default function Header() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const isDesktop = useMediaQuery({ minWidth: 1024 })
+  const basket = JSON.parse(localStorage.getItem("basket"));
+  const [count, setCount] = useState();
+  const [total, setTotal] = useState();
+  useEffect(() => {
+    const newCount = basket?.reduce((sum, item) => sum + item.count, 0);
+    setCount(newCount);
+    
+    const newTotal = basket?.reduce((sum,item) => sum + item.price,0);
+    setTotal(newTotal);
+  }, [basket]);
 
   const [burgerClass, setBurgerClass] = useState("header");
   const [navClass, setNavClass] = useState("nav");
@@ -30,10 +40,10 @@ export default function Header() {
 
   return (
     <header className={burgerClass}>
-      {isMobile && <HeaderMobile updateMenu={updateMenu} navClass={navClass} />}
-      {isTablet && <HeaderTablet updateMenu={updateMenu} navClass={navClass} />}
+      {isMobile && <HeaderMobile updateMenu={updateMenu} navClass={navClass} total={total} count={count}/>}
+      {isTablet && <HeaderTablet updateMenu={updateMenu} navClass={navClass} total={total} count={count}/>}
       {isDesktop && (
-        <HeaderDesctop updateMenu={updateMenu} navClass={navClass} />
+        <HeaderDesctop updateMenu={updateMenu} navClass={navClass} total={total} count={count}/>
       )}
     </header>
   );

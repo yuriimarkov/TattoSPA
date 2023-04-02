@@ -11,10 +11,10 @@ import ReviewsSection from "../../ReviewsSection/ReviewsSection";
 import "./../../../assets/styles/icomoon/icomoon.css";
 
 export default function Home({data,addToBasket}) {
-  
+
   const products = data?.products;
-  console.log(data)
   const reviews = data?.reviews;
+
   return (
     <>
       <Hero />
