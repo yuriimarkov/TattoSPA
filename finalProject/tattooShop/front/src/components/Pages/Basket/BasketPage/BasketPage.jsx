@@ -63,7 +63,7 @@ export function BasketPage({ basketItems }) {
     setBasket(updatedBasket);
   };
 
-  console.log(basket);
+
   return (
     <div className="basket__page">
       <div className="basket__container">

@@ -75,17 +75,16 @@
         width: calc(100% - 100px);
         display: flex;
         flex-direction: column;
+        color: $dark;
 
         @include media ('>=768px') {
             flex-direction: row;
         }
     }
 
-    .content__name {
-        color: $dark;
-    }
     .content__price {
-        color: $semi-gray;
+        color: $dark;
+        font-size: 15px;
     }
 
     .item__bottom {

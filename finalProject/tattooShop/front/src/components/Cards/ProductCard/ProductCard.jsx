@@ -1,4 +1,6 @@
-import { Button } from "../Buttons/Buttons";
+import { Button } from "../../Buttons/Buttons";
+
+import './ProductCard.scss'
 
 export default function ProductCard ({ imageSrc, id, name, price, status,addToBasket  }) {
         return (
@@ -12,7 +14,7 @@ export default function ProductCard ({ imageSrc, id, name, price, status,addToBa
             </div>
             <div className="item__content">
               <span className="content__name">{name}</span>
-              <span className="content__price">{price}</span>
+              <span className="content__price">{price} грн</span>
             </div>
             <Button text='Додати в корзину' className='btn btn__add' onClick={() => addToBasket({ imageSrc, name, price,id })}/>
           </div>

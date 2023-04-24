@@ -1,0 +1,66 @@
+import { Button } from "../../Buttons/Buttons";
+import "./FullCard.scss";
+
+export default function FullCard({ data }) {
+  console.log(data);
+
+  return (
+    <div className="full__card">
+      <div className="full__card--container">
+        <div className="full__card--info">
+          <div className="info__img">
+            <img
+              src={`http://localhost:1337${data?.images.data.attributes.url}`}
+            />
+            <div className="info__img--icon">
+              <span className="cat">{data?.status}</span>
+              <span className="favorite icon-favorite-o"></span>
+            </div>
+          </div>
+          <div className="info__content">
+            <span className="content__name">{data?.name}</span>
+            <div className="content__price--info">
+              <span className="price">{data?.price}</span>
+              <span className="available">{data?.available}</span>
+            </div>
+            <div className="content__text">
+              <p>{data?.shortDescription}</p>
+            </div>
+            <Button text="Додати в корзину" className="btn btn__add" />
+          </div>
+        </div>
+        <div className="full__card--about">
+          <div className="about__description">
+            <p>{data?.description}</p>
+          </div>
+          <div className="about__features">
+            <div className="features__item">
+              <span className="item__name">Хід голки</span>
+              <span className="item__feature">{data?.recognition}</span>
+            </div>
+            <div className="features__item">
+              <span className="item__name">Робочий вольтаж</span>
+              <span className="item__feature">До 12 V</span>
+            </div>
+            <div className="features__item">
+              <span className="item__name">Роз'єм</span>
+              <span className="item__feature">RCA</span>
+            </div>
+            <div className="features__item">
+              <span className="item__name">Виробник</span>
+              <span className="item__feature">{data?.maker}</span>
+            </div>
+            <div className="features__item">
+              <span className="item__name">Тип</span>
+              <span className="item__feature">{data?.type}</span>
+            </div>
+            <div className="features__item">
+              <span className="item__name">Призначення</span>
+              <span className="item__feature">{data?.recognition}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -12,14 +12,16 @@ export default function Header() {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   const isDesktop = useMediaQuery({ minWidth: 1024 })
   const basket = JSON.parse(localStorage.getItem("basket"));
-  const [count, setCount] = useState();
-  const [total, setTotal] = useState();
+  const [count, setCount] = useState(0);
+  const [total, setTotal] = useState(0);
   useEffect(() => {
-    const newCount = basket?.reduce((sum, item) => sum + item.count, 0);
+    if(basket.length > 0) {
+      const newCount = basket?.reduce((sum, item) => sum + item.count, 0);
     setCount(newCount);
-    
+     
     const newTotal = basket?.reduce((sum,item) => sum + item.price,0);
     setTotal(newTotal);
+    }
   }, [basket]);
 
   const [burgerClass, setBurgerClass] = useState("header");
@@ -37,6 +39,7 @@ export default function Header() {
       setIsClick(false);
     }
   };
+  
 
   return (
     <header className={burgerClass}>

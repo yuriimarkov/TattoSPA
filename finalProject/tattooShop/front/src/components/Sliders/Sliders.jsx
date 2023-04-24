@@ -2,7 +2,7 @@ import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
-import ProductCard from "../Cards/ProductCard";
+import ProductCard from "../Cards/ProductCard/ProductCard";
 import { ButtonLink } from "../Buttons/Buttons";
 
 import "swiper/css";

@@ -4,7 +4,7 @@ import "./BasketButton.scss";
 import { Link } from "react-router-dom";
 
 const BasketButton = ({total,count}) => {
-  console.log(total)
+  console.log(count);
   return (
       <Link to='/basket'>
         <div className="basket">

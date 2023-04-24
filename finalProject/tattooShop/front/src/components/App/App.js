@@ -15,6 +15,7 @@ import { BasketPage } from "../Pages/Basket/BasketPage/BasketPage";
 import Catalog from '../Pages/Catalog/Catalog';
 
 import loadingGif from './../../assets/images/loading.gif';
+import FullCard from '../Cards/FullCard/FullCard';
 
 
 function App() {
@@ -61,6 +62,8 @@ function App() {
     return <p>Error: {error.message}</p>;
   }
 
+  console.log(data.products.data)
+
   
   return (
     <>
@@ -73,6 +76,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/basket' element={<BasketPage basketItems={basket} />} />
           <Route path='/catalog' element={<Catalog data={data} addToBasket={addToBasket} />} />
+          {data?.products.data && data?.products.data.map(item => <Route key={item.id} path={`/category/${item.id}`} element={<FullCard data={item.attributes} />} />)}
           <Route path='*' element={<Page404 />} />
         </Routes>
       </main>
