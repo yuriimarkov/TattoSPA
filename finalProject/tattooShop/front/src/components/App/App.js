@@ -49,6 +49,7 @@ function App() {
       setBasket(updatedBasket);
     }
   }
+  
 
   if (loading) {
     return (
@@ -76,7 +77,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/basket' element={<BasketPage basketItems={basket} />} />
           <Route path='/catalog' element={<Catalog data={data} addToBasket={addToBasket} />} />
-          {data?.products.data && data?.products.data.map(item => <Route key={item.id} path={`/category/${item.id}`} element={<FullCard data={item.attributes} />} />)}
+          {data?.products.data && data?.products.data.map(item => <Route key={item.id} path={`/catalog/${item.id}`} element={<FullCard data={item.attributes} addToBasket={addToBasket} />} />)}
           <Route path='*' element={<Page404 />} />
         </Routes>
       </main>

@@ -7,7 +7,7 @@ export default function ProductCard ({ imageSrc, id, name, price, status,addToBa
           <div className="card__item" id="{id}" >
             <div className="card__icon">
               <span className="cat">{status}</span>
-              <span className="favorite icon-favorite-o"></span>
+              <span className="favorite icon-favorite"></span>
             </div>
             <div className="item__image">
               <img src={`http://localhost:1337${imageSrc}`} alt={name} />

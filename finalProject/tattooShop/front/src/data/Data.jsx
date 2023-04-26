@@ -31,7 +31,7 @@ query {
       id
       attributes {
         userName
-        Descriprion
+        description
         avatar {
           data {
             attributes {

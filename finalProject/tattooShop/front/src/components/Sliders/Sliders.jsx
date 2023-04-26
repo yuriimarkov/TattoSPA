@@ -42,7 +42,7 @@ export function ReviewsSlider ({reviews}){
               <img src={`http://localhost:1337${review.attributes.avatar.data.attributes.url}`} alt="" />
             </div>
             <div className="content__text-holder">
-              <p className="content__text">{review.attributes.Descriprion}</p>
+              <p className="content__text">{review.attributes.description}</p>
             </div>
             <div className="content__social">
               <span className="social__icon icon-Telegram"></span>

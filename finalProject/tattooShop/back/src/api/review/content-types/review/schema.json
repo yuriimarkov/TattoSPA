@@ -4,7 +4,8 @@
   "info": {
     "singularName": "review",
     "pluralName": "reviews",
-    "displayName": "reviews"
+    "displayName": "reviews",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,18 +15,19 @@
     "userName": {
       "type": "string"
     },
-    "Descriprion": {
+    "description": {
       "type": "text"
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
