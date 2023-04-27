@@ -1,10 +1,22 @@
+import { useState } from "react";
 import { Button } from "../../Buttons/Buttons";
 import ProductCard from "../../Cards/ProductCard/ProductCard";
 
 import "./Catalog.scss";
 
 export default function Catalog({ data, addToBasket }) {
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const products = data?.products;
+  const categories = new Set(
+    products?.data.map((product) => product.attributes.category)
+  );
+
+  const productsToDisplay =
+    selectedCategory === "all"
+      ? products?.data
+      : products?.data.filter(
+          (product) => product.attributes.category === selectedCategory
+        );
   return (
     <div className="product__page">
       <div className="product__page--container">
@@ -13,18 +25,28 @@ export default function Catalog({ data, addToBasket }) {
         </div>
         <div className="product__page-nav">
           <ul className="nav__list-product">
-            <li className="nav__item-product active">
-              <span>Тату машинки</span>
+            <li
+              key="all"
+              className={`nav__item-product ${
+                selectedCategory === "all" ? "active" : ""
+              }`}
+              data-category="all"
+              onClick={() => setSelectedCategory("all")}
+            >
+              <span>Всі</span>
             </li>
-            <li className="nav__item-product">
-              <span>Тату краски</span>
-            </li>
-            <li className="nav__item-product">
-              <span>Тату иглы</span>
-            </li>
-            <li className="nav__item-product">
-              <span>Тату держатели</span>
-            </li>
+            {[...categories].map((category) => (
+              <li
+                key={category}
+                className={`nav__item-product ${
+                  selectedCategory === category ? "active" : ""
+                }`}
+                data-category={category}
+                onClick={() => setSelectedCategory(category)}
+              >
+                <span>{category}</span>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="product__page-products">
@@ -33,7 +55,7 @@ export default function Catalog({ data, addToBasket }) {
             <span className="filters__text">Фільтр</span>
           </div>
           <div className="products__holder">
-            {products?.data.map((product) => (
+            {productsToDisplay.map((product) => (
               <ProductCard
                 key={product.id}
                 imageSrc={product.attributes.images.data.attributes.url}
@@ -46,7 +68,7 @@ export default function Catalog({ data, addToBasket }) {
             ))}
           </div>
         </div>
-        <Button text='Показати ще' className='btn btn__add' />
+        <Button text="Показати ще" className="btn btn__add" />
       </div>
     </div>
   );
