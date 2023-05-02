@@ -98,7 +98,6 @@ export function HeroSlider() {
 }
 
 export function ProductSlider({ products,addToBasket }) {
-  console.log(products?.data)
   const settings = {
     slidesPerView: 1,
     spaceBetween: 10,
@@ -111,12 +110,12 @@ export function ProductSlider({ products,addToBasket }) {
     },
     breakpoints: {
       768: {
-        centeredSlidesBounds: true,
-        centeredSlides: true,
-        slidesPerView: 3,
+        slidesPerView: 2,
         spaceBetween: 20,
       },
-      1200: {
+      1024: {
+        centeredSlidesBounds: true,
+        centeredSlides: true,
         slidesPerView: 3,
         spaceBetween: 20,
       },
@@ -129,6 +128,7 @@ export function ProductSlider({ products,addToBasket }) {
       {products?.data.map((product) => (
         <SwiperSlide key={product.id}>
           <ProductCard
+          key={product.id}
             imageSrc={product.attributes.images.data.attributes.url}
             name={product.attributes.name}
             price={product.attributes.price}

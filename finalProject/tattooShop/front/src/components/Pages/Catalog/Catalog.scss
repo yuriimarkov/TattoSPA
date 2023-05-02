@@ -95,11 +95,11 @@
         .card__item {
             
             @include media ('>=768px') {
-                width: calc(100% / 3 - 15px);
+                width: calc(100% / 2 - 10px);
             }
 
             @include media ('>=1024px') {
-                width: calc(100% / 4 - 15px);
+                width: calc(100% / 3 - 15px);
             }
         }
     }

@@ -40,16 +40,21 @@
     .info__img {
         position: relative;
         width: 100%;
+        background-color: #F5F5F5;
 
         @include media ('>=768px') {
             width: calc(50% - 10px);
+            max-width: 350px;
+        }
+        @include media ('>=1024px') {
+            max-width: 450px;
         }
 
         img {
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
 
@@ -88,10 +93,6 @@
         @include media ('>=768px') {
             width: calc(50% - 10px);
             justify-content: space-between;
-        }
-
-        @include media ('>=1024px') {
-            justify-content: center;
         }
     }
 
@@ -137,10 +138,7 @@
     .btn-holder {
         @include media ('>=768px') {
             justify-content: start;
-            margin-bottom: -16px;
         }
-
-    
     }
 
     .full__card--about {
