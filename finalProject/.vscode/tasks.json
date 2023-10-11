@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "tattooShop/front",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "npm: install - tattooShop/front",
+			"detail": "install dependencies from package"
+		}
+	]
+}

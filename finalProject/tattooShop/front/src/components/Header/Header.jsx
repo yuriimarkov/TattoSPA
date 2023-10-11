@@ -11,9 +11,11 @@ export default function Header() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   const isDesktop = useMediaQuery({ minWidth: 1024 })
-  const basket = JSON.parse(localStorage.getItem("basket"));
+  const basketData = localStorage.getItem("basket");
+  const basket = basketData ? JSON.parse(basketData) : 0;
   const [count, setCount] = useState(0);
   const [total, setTotal] = useState(0);
+  console.log(basket)
   useEffect(() => {
     if(basket.length > 0) {
       const newCount = basket?.reduce((sum, item) => sum + item.count, 0);

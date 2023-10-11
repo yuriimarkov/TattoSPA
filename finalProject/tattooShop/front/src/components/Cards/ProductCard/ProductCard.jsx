@@ -18,7 +18,7 @@ export default function ProductCard({
         <span className="favorite icon-favorite"></span>
       </div>
       <div className="item__image">
-        <img src={`http://localhost:1337${imageSrc}`} alt={name} />
+        <img src={`http://localhost:1337${imageSrc}`}  alt={name} />
       </div>
       <div className="item__content">
         <span className="content__name">{name}</span>
